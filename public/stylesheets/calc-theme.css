@@ -1,0 +1,244 @@
+
+body
+{
+	line-height: 1.6em;
+}
+
+@font-face {
+	font-family: Digital;
+	src: url(digital-7italic.ttf);	 /* can also be an 'http' url */
+}
+
+#result-box {
+	-moz-box-shadow:inset 0px 3px 4px 0px #383738;
+	-webkit-box-shadow:inset 0px 3px 4px 0px #383738;
+	box-shadow:inset 0px 3px 4px 0px #383738;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d2dbce), color-stop(1, #7a8575) );
+	background:-moz-linear-gradient( center top, #d2dbce 5%, #7a8575 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2dbce', endColorstr='#7a8575');
+	background-color:#d2dbce;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:6px;
+	color:#363d31;
+	font-family: Digital; 
+	font-size:24px; 
+	font-weight:bolder;
+	padding: 4px 6px 6px 4px;
+	text-decoration:none;
+	text-align:right;
+	top:0; bottom:0; left:0; right:0;
+	width: 446px;
+	height:50px;
+}
+
+#stack {
+	color: #50574f;
+	font-size: 16px;
+	font-weight:normal;
+}
+
+#calc-table {
+	-moz-box-shadow: 2px 3px 4px 1px #3d3d3d;
+	-webkit-box-shadow: 2px 3px 4px 1px #3d3d3d;
+	box-shadow: 2px 3px 4px 1px #3d3d3d;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d0d8db), color-stop(1, #a1aaaf) );
+	background:-moz-linear-gradient( center top, #d0d8db 5%, #a1aaaf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0d8db', endColorstr='#a1aaaf');
+	background-color:#d0d8db;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	border:1px solid #7c8285;
+	color:#777f81;
+	font-family:arial;
+	font-size:19px;
+	font-weight:bold;
+	padding: 4px 6px 6px 4px;	
+	text-decoration:none;
+	margin: 35px;
+	width: 480px;
+	text-align:left;
+}
+#calc-table thead td
+{
+	padding: 10px 4px 10px 4px;
+	font-weight: normal;
+	font-size: 14px;
+	height:50px;
+	color: #333;
+}
+#calc-table tfoot td
+{
+	padding: 1px 1px 1px 1px;
+	font-weight: normal;
+	font-size: 1px;
+	height: 1px;
+	color: #333;
+}
+#calc-table td
+{
+	padding: 2px 4px 2px 4px;
+	width: 80px;
+	height: 40px;
+	color: #333;
+}
+#calc-table input
+{
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	text-align: right;
+	width: 100%;
+	height: 30px;
+	color: #333;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 3px 4px 0px #383738;
+	-webkit-box-shadow:inset 0px 3px 4px 0px #383738;
+	box-shadow:inset 0px 3px 4px 0px #383738;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #010101), color-stop(1, #383838) );
+	background:-moz-linear-gradient( center top, #010101 5%, #383838 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#010101', endColorstr='#383838');
+	background-color:#010101;
+	-moz-border-radius:26px;
+	-webkit-border-radius:26px;
+	border-radius:26px;
+	border:2px solid #000000;
+	display:inline-block;
+	color:#f2f2f2;
+	font-family:arial;
+	font-size:19px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;
+	padding: 6px 0px 0px 0px;
+	width: 100%;
+	height: 100%;
+}.myButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #383838), color-stop(1, #010101) );
+	background:-moz-linear-gradient( center top, #383838 5%, #010101 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#383838', endColorstr='#010101');
+	background-color:#383838;
+}.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+/* BETA-TESTING THEME:
+
+body
+{
+	line-height: 1.6em;
+}
+
+#result-box
+{
+	font-family:arial;
+	font-weight:bold;
+	text-align: right;
+	top:0; bottom:0; left:0; right:0;
+	padding: 4px 6px 6px 4px;	
+	height:50px;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #aaa), color-stop(.15, #eeeeee), color-stop(1, #eeeeee) );
+	background:-moz-linear-gradient( center top, #aaa 5%, #eee 15%, #eee 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d3d3d3', endColorstr='#ffffff');
+}
+
+#stack {
+	color: #50574f;
+	font-size: 13px;
+}
+
+#calc-table
+{
+	color:#777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	margin: 35px;
+	width: 480px;
+	text-align: left;
+	border-collapse: collapse;
+	border-radius:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	background: #bbbbbb;
+}
+#calc-table thead td
+{
+	padding: 10px 4px 10px 4px;
+	font-weight: normal;
+	font-size: 14px;
+	height:50px;
+	color: #333;
+}
+#calc-table tfoot td
+{
+	padding: 1px 1px 1px 1px;
+	font-weight: normal;
+	font-size: 1px;
+	height: 1px;
+	color: #333;
+}
+#calc-table td
+{
+	padding: 2px 4px 2px 4px;
+	width: 80px;
+	height: 40px;
+	color: #333;
+}
+#calc-table input
+{
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	text-align: right;
+	width: 100%;
+	height: 30px;
+	color: #333;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding: 6px 0px 0px 0px;
+	width:100%;
+	height:100%;
+	text-decoration:none;
+	text-align:center;
+	vertical-align:middle;
+	text-shadow:1px 1px 0px #ffffff;
+}.myButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}.myButton:active {
+	position:relative;
+	top:3px;
+}
+
+
+*/ 
