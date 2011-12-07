@@ -1,3 +1,5 @@
 This is a simple arithmetic calculator.  
 
 It performs calculations server-side using Ruby on Rails.
+
+App hosted at:  calc1.heroku.com
