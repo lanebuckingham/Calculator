@@ -2,34 +2,35 @@ Calculator::Application.routes.draw do
 
   root :to => "buttons#Home" 
 
-  match "buttons/Home" => 'buttons#Home'
-  match "buttons/Backspace" => 'buttons#Backspace'
-  match "buttons/CE" => 'buttons#CE'
-  match "buttons/C" => 'buttons#C'
-  match "buttons/MC" => 'buttons#MC'
-  match "buttons/MR" => 'buttons#MR'
-  match "buttons/MS" => 'buttons#MS'
-  match "buttons/MPlus" => 'buttons#MPlus'
-  match "buttons/One" => 'buttons#One'
-  match "buttons/Two" => 'buttons#Two'
-  match "buttons/Three" => 'buttons#Three'
-  match "buttons/Four" => 'buttons#Four'
-  match "buttons/Five" => 'buttons#Five'
-  match "buttons/Six" => 'buttons#Six'
-  match "buttons/Seven" => 'buttons#Seven'
-  match "buttons/Eight" => 'buttons#Eight'
-  match "buttons/Nine" => 'buttons#Nine'
-  match "buttons/Zero" => 'buttons#Zero'
-  match "buttons/PlusMinus" => 'buttons#PlusMinus'
-  match "buttons/Dot" => 'buttons#Dot'
-  match "buttons/Divide" => 'buttons#Divide'
-  match "buttons/Multiply" => 'buttons#Multiply'
-  match "buttons/Add" => 'buttons#Add'
-  match "buttons/Subtract" => 'buttons#Subtract'
-  match "buttons/Sqrt" => 'buttons#Sqrt'
-  match "buttons/Percent" => 'buttons#Percent'
-  match "buttons/OneOver" => 'buttons#OneOver'
-  match "buttons/Equals" => 'buttons#Equals'
+  match "buttons/Home" => 'buttons#home'
+  match "buttons/Backspace" => 'buttons#backspace'
+  match "buttons/CE" => 'buttons#ce'
+  match "buttons/C" => 'buttons#c'
+  match "buttons/MC" => 'buttons#mc'
+  match "buttons/MR" => 'buttons#mr'
+  match "buttons/MS" => 'buttons#ms'
+  match "buttons/MPlus" => 'buttons#m_plus'
+  match "buttons/MMinus" => 'buttons#m_minus'
+  match "buttons/One" => 'buttons#input', :num => 1
+  match "buttons/Two" => 'buttons#input', :num => 2
+  match "buttons/Three" => 'buttons#input', :num => 3
+  match "buttons/Four" => 'buttons#input', :num => 4
+  match "buttons/Five" => 'buttons#input', :num => 5
+  match "buttons/Six" => 'buttons#input', :num => 6
+  match "buttons/Seven" => 'buttons#input', :num => 7
+  match "buttons/Eight" => 'buttons#input', :num => 8
+  match "buttons/Nine" => 'buttons#input', :num => 9
+  match "buttons/Zero" => 'buttons#input', :num => 0
+  match "buttons/PlusMinus" => 'buttons#plus_minus'
+  match "buttons/Dot" => 'buttons#dot'
+  match "buttons/Divide" => 'buttons#divide'
+  match "buttons/Multiply" => 'buttons#multiply'
+  match "buttons/Add" => 'buttons#plus'
+  match "buttons/Subtract" => 'buttons#minus'
+  match "buttons/Sqrt" => 'buttons#square_root'
+  match "buttons/Percent" => 'buttons#percent'
+  match "buttons/OneOver" => 'buttons#reciprocal'
+  match "buttons/Equals" => 'buttons#equals'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

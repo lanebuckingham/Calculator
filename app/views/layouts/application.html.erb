@@ -12,56 +12,71 @@
 		<tr>
 			<td colspan=6>
 				<div id="result-box">
-					<div id="stack"><%= session[:stack].join(" ") %></div><br>
-					<div id="num"><%= session[:num] %></div>
+					<% 
+						s = session[:calc].stack.join ' '
+						r = session[:calc].result.to_s
+
+						if s.length > 60 
+							s = "..." + s[-60..-1]
+						end
+
+						if r.length > 36 
+							r = "..." + r[-36..-1]
+						end
+					%>
+
+					<div id="stack">&nbsp;<%= s %></div>
+					<span style="float: left;">&nbsp;<%= (session[:calc].memory != "" ? "M" : "") %></span>
+					<span id="result">&nbsp;<%= r %></span>
 				</div>
 			</td>
 		</tr> 
 	</thead>
 	<tbody>
 		<tr>
-			<td colspan=2><%= link_to "Backspace", buttons_Backspace_path, :class => "myButton" %></td>
-			<td colspan=2><%= link_to "CE", buttons_CE_path, :class => "myButton" %></td>
+			<td><%= link_to "MC", buttons_MC_path, :class => "myButton" %></td>
+			<td colspan=2><%= link_to buttons_Backspace_path, :class => "myButton" do %>
+				<span style="font-size: x-large;">&#8592;</span><% end %></td>
+			<td><%= link_to "CE", buttons_CE_path, :class => "myButton" %></td>
 			<td colspan=2><%= link_to "C", buttons_C_path, :class => "myButton" %></td>
 		</tr>
 		<tr>
+			<td><%= link_to "MR", buttons_MR_path, :class => "myButton" %></td>
 			<td><%= link_to "7", buttons_Seven_path, :class => "myButton" %></td>
 			<td><%= link_to "8", buttons_Eight_path, :class => "myButton" %></td>
 			<td><%= link_to "9", buttons_Nine_path, :class => "myButton" %></td>
 			<td><%= link_to "/", buttons_Divide_path, :class => "myButton" %></td>
-			<td><%= link_to "Sqrt", buttons_Sqrt_path, :class => "myButton" %></td>
-			<td><%= link_to "MC", buttons_MC_path, :class => "myButton" %></td>
+			<td><%= link_to buttons_Sqrt_path, :class => "myButton" do %>
+				<span style="white-space: nowrap;">
+				&radic;<span style="text-decoration:overline;">&nbsp;&nbsp;</span>
+				</span>
+			<% end %></td>
 		</tr>
 		<tr>
+			<td><%= link_to "MS", buttons_MS_path, :class => "myButton" %></td>
 			<td><%= link_to "4", buttons_Four_path, :class => "myButton" %></td>
 			<td><%= link_to "5", buttons_Five_path, :class => "myButton" %></td>
 			<td><%= link_to "6", buttons_Six_path, :class => "myButton" %></td>
 			<td><%= link_to "*", buttons_Multiply_path, :class => "myButton" %></td>
 			<td><%= link_to "%", buttons_Percent_path, :class => "myButton" %></td>
-			<td><%= link_to "MR", buttons_MR_path, :class => "myButton" %></td>
 		</tr>
 		<tr>
+			<td><%= link_to "M+", buttons_MPlus_path, :class => "myButton" %></td>
 			<td><%= link_to "1", buttons_One_path, :class => "myButton" %></td>
 			<td><%= link_to "2", buttons_Two_path, :class => "myButton" %></td>
 			<td><%= link_to "3", buttons_Three_path, :class => "myButton" %></td>
 			<td><%= link_to "-", buttons_Subtract_path, :class => "myButton" %></td>
 			<td><%= link_to "1/x", buttons_OneOver_path, :class => "myButton" %></td>
-			<td><%= link_to "MS", buttons_MS_path, :class => "myButton" %></td>
 		</tr>
 		<tr>
+			<td><%= link_to "M-", buttons_MMinus_path, :class => "myButton" %></td>
 			<td><%= link_to "0", buttons_Zero_path, :class => "myButton" %></td>
 			<td><%= link_to "+/-", buttons_PlusMinus_path, :class => "myButton" %></td>
 			<td><%= link_to ".", buttons_Dot_path, :class => "myButton" %></td>
 			<td><%= link_to "+", buttons_Add_path, :class => "myButton" %></td>
 			<td><%= link_to "=", buttons_Equals_path, :class => "myButton" %></td>
-			<td><%= link_to "M+", buttons_MPlus_path, :class => "myButton" %></td>
 		</tr>
 	</tbody>
-	<tfoot>
-		<tr>
-			<td colspan=6></td>
-		</tr> 
-	</tfoot>
 
 </table>
 

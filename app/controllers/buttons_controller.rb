@@ -2,211 +2,114 @@ class ButtonsController < ApplicationController
   before_filter :prepare_session
 
   def prepare_session
-    session[:num] ||= "0"
-    session[:stack] ||= []
+    # initialize session variables
+    session[:calc] ||= Calc.new
+  end
+  
+  def home
+    # show the default view
   end
 
-
-  def Home
+  def backspace
+    session[:calc].backspace
+    show()
+  end
+  
+  def ce
+    session[:calc].ce
+    show()
   end
 
-  def Backspace
-    session[:num] = session[:num][0..-2]
-    Show()
+  def c
+    session[:calc].c  
+    show()
   end
 
-  def CE
-    session[:num] = "0"
-    Show()
+  def mc
+    session[:calc].mc
+    show()
   end
 
-  def C
-    session[:num] = "0"
-    session[:stack] = []
-    Show()
+  def mr
+    session[:calc].mr
+    show()
   end
 
-  def MC
-    Show()
+  def ms
+    session[:calc].ms
+    show()
   end
 
-  def MR
-    Show()
+  def m_plus
+    session[:calc].m_plus
+    show()
   end
 
-  def MS
-    Show()
+  def m_minus
+    session[:calc].m_minus
+    show()
+  end
+  
+  def input    
+    session[:calc].input params[:num]
+    show()
+  end
+  
+  def dot
+    session[:calc].dot
+    show()
   end
 
-  def MPlus
-    Show()
+  def plus_minus    
+    session[:calc].plus_minus
+    show()
+  end
+  
+  def square_root
+    session[:calc].square_root
+    show()
   end
 
-  def One
-    session[:num] += "1"
-    Show()
+  def reciprocal
+    session[:calc].reciprocal
+    show()
   end
 
-  def Two
-    session[:num] += "2"
-    Show()
+  def percent
+    session[:calc].percent
+    show()
   end
 
-  def Three
-    session[:num] += "3"
-    Show()
+  def plus
+    session[:calc].plus
+    show()
   end
 
-  def Four
-    session[:num] += "4"
-    Show()
+  def minus
+    session[:calc].minus
+    show()
   end
 
-  def Five
-    session[:num] += "5"
-    Show()
+  def divide
+    session[:calc].divide
+    show()
   end
 
-  def Six
-    session[:num] += "6"
-    Show()
+  def multiply
+    session[:calc].multiply
+    show()
   end
 
-  def Seven
-    session[:num] += "7"
-    Show()
-  end
-
-  def Eight
-    session[:num] += "8"
-    Show()
-  end
-
-  def Nine
-    session[:num] += "9"
-    Show()
-  end
-
-  def Zero
-    session[:num] += "0"
-    Show()
-  end
-
-  def PlusMinus
-    if session[:num].to_f < 0 
-      session[:num] = session[:num][1..-1] 
-    else
-      session[:num] = "-#{session[:num]}"
-    end
-    Show()
-  end
-
-  def Dot
-    session[:num] += '.' if not session[:num].include? '.'
-    Show()
-  end
-
-  def Divide
-    #session[:stack].push session[:num].to_f
-    #session[:stack].push :/
-    #render "Home"
-    Push :/
-    Show() 
-    session[:num] = ""
-  end
-
-  def Multiply
-    #session[:stack].push session[:num].to_f
-    #session[:stack].push :*
-    #render "Home"
-    Push :*
-    Show() 
-    session[:num] = ""
-  end
-
-  def Add
-    #session[:stack].push session[:num].to_f
-    #session[:stack].push :+
-    #render "Home"
-    Push :+
-    Show() 
-    session[:num] = ""
-  end
-
-  def Subtract
-    #session[:stack].push session[:num].to_f
-    #session[:stack].push :-
-    #render "Home"
-    Push :-
-    Show() 
-    session[:num] = ""
-  end
-
-  def Sqrt
-    session[:num] = Math.sqrt(session[:num].to_f).to_s
-    Show()
-  end
-
-  def Percent
-    session[:num] = (session[:savedNum] * (session[:num].to_f / 100)).to_s
-    Show()
-  end
-
-  def OneOver
-    session[:num] = (1.0 / session[:num].to_f).to_s
-    Show()
-  end
-
-  def Equals
-
-    # Evaluate the stack
-
-    
-    case session[:stack]
-    when :add
-      session[:savedNum] += session[:num].to_f
-    when :subtract
-      session[:savedNum] -= session[:num].to_f
-    when :multiply
-      session[:savedNum] *= session[:num].to_f
-    when :divide
-      session[:savedNum] /= session[:num].to_f
-    end
-
-    # End operation
-    session[:stack] = ""
-
-    # Show the result
-    session[:num] = session[:savedNum].to_s
-
-    Show()
-
-    # Reset numbers
-    session[:num] = ""
-    session[:savedNum] = 0.0
-
+  def equals
+    session[:calc].equals
+    show()
   end
 
 
 private
 
-  def Push(sym)    
-    session[:stack].push session[:num].to_f
-    session[:stack].push sym
-  end
-
-  def Show
-    # Remove leading "0"
-    if session[:num].length > 1 && session[:num][0,1] == "0"
-      session[:num] = session[:num][1..-1]
-    end
-
-    # Remove trailing ".0" if num is an integer
-    if session[:num][-2..-1] == ".0"
-      session[:num] = session[:num][0..-3]
-    end
-
-    # Show currNum
+  def show
+    # show the default view
     render "Home"
   end
 
